@@ -92,15 +92,15 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl/raw/main/stellar.zip")  
+        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip")  
         break
         ;;
       2)
-        THEME_URL=$(echo -e "https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl/raw/main/billing.zip")
+        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/billing.zip")
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl/raw/main/enigma.zip")
+        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/enigma.zip")
         break
         ;; 
       x)
@@ -247,7 +247,7 @@ echo -e "${BLUE}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
 # Unduh file tema
-wget -O /root/stellar.zip https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl/raw/main/stellar.zip
+wget -O /root/stellar.zip https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip
 
 
 # Ekstrak file tema
@@ -521,7 +521,7 @@ install_nebula_theme() {
     fi
 
     # URL Repositori (gunakan HTTPS tanpa autentikasi)
-    local REPO_URL="https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl.git"
+    local REPO_URL="https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl.git"
     local TEMP_DIR="Autoinstaller-Theme-Pterodactyl"
 
     echo -e "${BLUE}🔄 Mengkloning repositori...${NC}"
@@ -560,7 +560,7 @@ install_elysium_theme() {
     echo -e "                                                       "
 
         # Menginstal Tema Elysium
-    REPO_URL="https://github.com/Bangsano/Autoinstaller-Theme-Pterodactyl.git"
+    REPO_URL="https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl.git"
     TEMP_DIR="Autoinstaller-Theme-Pterodactyl"
 
         git clone "$REPO_URL" "$TEMP_DIR" || { echo "Gagal mengkloning repositori."; exit 1; }
