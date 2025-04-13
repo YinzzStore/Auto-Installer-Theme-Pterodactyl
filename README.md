@@ -31,4 +31,4 @@ _\* di atas adalah os yang saya test, selebihnya bisa di test sendiri._
 
 
 ## Credits 
-- Github: [ SANO OFFICIAL ](https://github.com/Bangsano)
+- Github: [ XJUNZNAIRE OFFICIAL ](https://github.com/xjunznaire)
