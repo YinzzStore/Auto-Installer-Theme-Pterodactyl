@@ -572,13 +572,13 @@ install_slate_theme() {
 
     echo -e "${BLUE}📦 Memindahkan dan mengekstrak file...${NC}"
     mv "$TEMP_DIR/slate.zip" /var/www/
-    unzip -o /var/www/nebulaptero.zip -d /var/www/
+    unzip -o /var/www/slate.zip -d /var/www/
 
     echo -e "${BLUE}⚙️ Menginstal blueprint...${NC}"
     cd /var/www/pterodactyl && blueprint -install nebula
 
     echo -e "${BLUE}🧹 Membersihkan file sementara...${NC}"
-    rm -rf "$TEMP_DIR" "/var/www/nebulaptero.zip" "/var/www/pterodactyl/slate.blueprint"
+    rm -rf "$TEMP_DIR" "/var/www/slate.zip" "/var/www/pterodactyl/slate.blueprint"
 
     echo -e "                                                       "
     echo -e "${GREEN}[+] =============================================== [+]${NC}"
