@@ -13,17 +13,12 @@ display_welcome() {
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${BLUE}[+]                AUTO INSTALLER THEMA             [+]${NC}"
-  echo -e "${BLUE}[+]               © XJUNZNAIRE OFFICIAL             [+]${NC}"
+  echo -e "${BLUE}[+]               © NIXZ OFFICIAL             [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${RED}[+] =============================================== [+]${NC}"
   echo -e ""
   echo -e "script ini dibuat untuk mempermudah penginstalasian thema pterodactyl,"
   echo -e "Dilarang Keras Share Bebas."
-  echo -e ""
-  echo -e "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 :"
-  echo -e "@xjunznaire"
-  echo -e "𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 :"
-  echo -e "+62895353427000"
   sleep 4
   clear
 }
@@ -56,20 +51,17 @@ install_jq() {
 check_token() {
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]               LICENSE XJUNZNAIRE                [+]${NC}"
+  echo -e "${BLUE}[+]               LICENSE NIXZ                [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   echo -e "${YELLOW}MASUKKAN AKSES TOKEN: ${NC}"
   read -r USER_TOKEN
 
-  if [ "$USER_TOKEN" = "xjunzofc" ]; then
+  if [ "$USER_TOKEN" = "N2025" ]; then
     echo -e "${GREEN}AKSES BERHASIL${NC}}"
   else
-    echo -e "${GREEN}Token Salah! Beli Kode Token Di XJUNZNAIRE${NC}"
-    echo -e "${YELLOW}TELEGRAM : @xjunznaire${NC}"
-    echo -e "${YELLOW}WHATSAPP : +62895353427000${NC}"
-    echo -e "${YELLOW}HARGA TOKEN : 25K FREE UPDATE JIKA ADA TOKEN BARU${NC}"
-    echo -e "${YELLOW}© XJUNZNAIRE${NC}"
+    echo -e "${GREEN}Token Salah! Maaf!${NC}"
+    echo -e "${YELLOW}© NIXZ${NC}"
     exit 1
   fi
   clear
@@ -92,15 +84,15 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip")  
+        THEME_URL=$(echo -e "https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip")  
         break
         ;;
       2)
-        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/billing.zip")
+        THEME_URL=$(echo -e "https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl/raw/main/billing.zip")
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/enigma.zip")
+        THEME_URL=$(echo -e "https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl/raw/main/enigma.zip")
         break
         ;; 
       x)
@@ -247,7 +239,7 @@ echo -e "${BLUE}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
 # Unduh file tema
-wget -O /root/stellar.zip https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip
+wget -O /root/stellar.zip https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl/raw/main/stellar.zip
 
 
 # Ekstrak file tema
@@ -521,7 +513,7 @@ install_nebula_theme() {
     fi
 
     # URL Repositori (gunakan HTTPS tanpa autentikasi)
-    local REPO_URL="https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl.git"
+    local REPO_URL="https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl.git"
     local TEMP_DIR="Autoinstaller-Theme-Pterodactyl"
 
     echo -e "${BLUE}🔄 Mengkloning repositori...${NC}"
@@ -551,6 +543,52 @@ install_nebula_theme() {
     sleep 2
 }
 
+# Slate Theme
+install_slate_theme() {
+    echo -e "                                                       "
+    echo -e "${GREEN}[+] =============================================== [+]${NC}"
+    echo -e "${GREEN}[+]                INSTALASI SLATE THEME                 [+]${NC}"
+    echo -e "${GREEN}[+] =============================================== [+]${NC}"
+    echo -e "                                                       "
+
+    local BLUEPRINT_FILE="/var/www/pterodactyl/blueprint.sh"
+    
+    if [ ! -f "$BLUEPRINT_FILE" ]; then
+        echo "𝗗𝗘𝗣𝗘𝗡𝗗 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗕𝗘𝗟𝗨𝗠 𝗗𝗜𝗜𝗡𝗦𝗧𝗔𝗟. 𝗦𝗜𝗟𝗔𝗛𝗞𝗔𝗡 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗗𝗘𝗡𝗚𝗔𝗡 𝗢𝗣𝗦𝗜 𝗡𝗢 𝟭𝟭"
+        exit 1
+    fi
+
+    # URL Repositori (gunakan HTTPS tanpa autentikasi)
+    local REPO_URL="https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl.git"
+    local TEMP_DIR="Autoinstaller-Theme-Pterodactyl"
+
+    echo -e "${BLUE}🔄 Mengkloning repositori...${NC}"
+    git clone --depth=1 "$REPO_URL"
+
+    if [ ! -d "$TEMP_DIR" ]; then
+        echo -e "${RED}❌ Gagal mengkloning repositori.${NC}"
+        exit 1
+    fi
+
+    echo -e "${BLUE}📦 Memindahkan dan mengekstrak file...${NC}"
+    mv "$TEMP_DIR/slate.zip" /var/www/
+    unzip -o /var/www/nebulaptero.zip -d /var/www/
+
+    echo -e "${BLUE}⚙️ Menginstal blueprint...${NC}"
+    cd /var/www/pterodactyl && blueprint -install nebula
+
+    echo -e "${BLUE}🧹 Membersihkan file sementara...${NC}"
+    rm -rf "$TEMP_DIR" "/var/www/nebulaptero.zip" "/var/www/pterodactyl/slate.blueprint"
+
+    echo -e "                                                       "
+    echo -e "${GREEN}[+] =============================================== [+]${NC}"
+    echo -e "${GREEN}[+]           SLATE THEME BERHASIL DIINSTALL          [+]${NC}"
+    echo -e "${GREEN}[+] =============================================== [+]${NC}"
+    echo -e "                                                       "
+    
+    sleep 2
+}
+
 # Elysium Theme
 install_elysium_theme() {
     echo -e "                                                       "
@@ -560,7 +598,7 @@ install_elysium_theme() {
     echo -e "                                                       "
 
         # Menginstal Tema Elysium
-    REPO_URL="https://github.com/xjunznaire/Auto-Installer-Theme-Pterodactyl.git"
+    REPO_URL="https://github.com/YinzzStore/Auto-Installer-Theme-Pterodactyl.git"
     TEMP_DIR="Autoinstaller-Theme-Pterodactyl"
 
         git clone "$REPO_URL" "$TEMP_DIR" || { echo "Gagal mengkloning repositori."; exit 1; }
@@ -606,7 +644,7 @@ while true; do
   echo -e "${RED}',gg       ,ggg.      'ggg:                               ${NC}"
   echo -e "${RED}'ggg      ,gg'''  .    ggg       Auto Installer Theme Pterodactyl   ${NC}"
   echo -e "${RED}gggg      gg     ,     ggg      ------------------------  ${NC}"
-  echo -e "${RED}ggg:     gg.     -   ,ggg       • Telegram : @xjunznaire      ${NC}"
+  echo -e "${RED}ggg:     gg.     -   ,ggg       • Telegram : @NIXZ      ${NC}"
   echo -e "${RED} ggg:     ggg._    _,ggg        • Whatsapp  : +62895353427000  ${NC}"
   echo -e "${RED} ggg.    '.'''ggggggp                                   ${NC}"
   echo -e "${RED}  'ggg    '-.__                                           ${NC}"
@@ -628,6 +666,7 @@ while true; do
   echo "9. Install Depend"
   echo "10. Install Tema Nebula (wajib install depend terlebih dahulu)"
   echo "11. Install Tema Elysium"
+  echo "12. Install Tema Slate"
   echo "x. Exit"
   echo -e "Masukkan pilihan 1/2/3/.../x:"
   read -r MENU_CHOICE
@@ -666,6 +705,9 @@ while true; do
       ;;
       11)
       install_elysium_theme
+      ;;
+      12)
+      install_slate_theme
       ;;
     x)
       echo "Keluar dari skrip."
